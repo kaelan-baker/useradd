@@ -91,7 +91,8 @@ do
 	# This didnt work, trying another way
 	#newusers -r $USERNAME:$PASSWD:$NUID:$NGID:$CNAME:$DIRECTORY:/bin/bash
 
-	useradd -m -d $DIRECTORY -c "$CNAME" -g $NGID -u $NUID -p $PASSWD $USERNAME
+	useradd -m -d $DIRECTORY -c "$CNAME" -g $NGID -u $NUID $USERNAME
+	echo $PASSWD |passwd --stdin $USERNAME
 
 	echo ""
 
